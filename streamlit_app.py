@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 # Load and prepare data
 @st.cache_data
 def load_model():
-    df = pd.read_csv("circuit_fault_data.csv")
+    df = pd.read_csv("circuit_fault_data.csv","dataset.csv")
     X = df[['Input Voltage (V)', 'Output Current (A)']]
     y = df['Fault Type']
     model = RandomForestClassifier(random_state=42)
