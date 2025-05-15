@@ -19,8 +19,8 @@ model = load_model()
 st.title("🔌 Circuit Fault Detector")
 st.write("Enter the input voltage and output current to detect possible faults in the circuit.")
 
-vin = st.number_input("Input Voltage (V)", min_value=0.0, max_value=100.0, step=0.1)
-iout = st.number_input("Output Current (A)", min_value=0.0, max_value=100.0, step=0.1)
+vin = st.number_input("Input Voltage (V)", min_value=0.0, max_value=10.0, step=0.1)
+iout = st.number_input("Output Current (A)", min_value=0.0, max_value=10.0, step=0.1)
 
 if st.button("Predict Fault"):
     prediction = model.predict([[vin, iout]])[0]
